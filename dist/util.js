@@ -38,3 +38,6 @@ export function resolveSuccess(records) {
         records,
     };
 }
+export function normalizeDomain(domain) {
+    return domain.replace(/^\.+|\.+$/g, "").replace(/^\/+|\/+$/g, "");
+}
