@@ -1,6 +1,6 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
 import { getTld } from "./util.js";
-import ResolverRegistry from "@lumeweb/resolver";
+import { ResolverRegistry } from "@lumeweb/resolver";
 
 export interface ResolverModule {
   constructor(resolver: ResolverRegistry): void;
