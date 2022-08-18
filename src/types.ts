@@ -5,7 +5,7 @@ export interface ResolverOptions {
 }
 
 export interface DNSResult {
-  records: any[];
+  records: DNSRecord[];
   error?: Error;
 }
 
