@@ -1,7 +1,6 @@
 export interface ResolverOptions {
   type: any;
   customType?: string;
-  records: any[];
   options: any;
 }
 
