@@ -14,7 +14,7 @@ export declare abstract class AbstractResolverModule {
   abstract resolve(
     input: string,
     options: ResolverOptions,
-    force: boolean
+    bypassCache: boolean
   ): Promise<DNSResult>;
   getSupportedTlds(): string[];
   isTldSupported(domain: string): boolean;
