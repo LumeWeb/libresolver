@@ -1,7 +1,7 @@
 export interface ResolverOptions {
   type: any;
   customType?: string;
-  options: any;
+  options?: any;
 }
 
 export interface DNSResult {
