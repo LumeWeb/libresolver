@@ -1,7 +1,7 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
 import { getTld } from "./util.js";
 
-export default interface ResolverModule {
+export interface ResolverModule {
   constructor(resolver: any): void;
 
   resolve(
