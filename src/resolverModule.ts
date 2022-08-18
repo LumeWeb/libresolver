@@ -1,8 +1,9 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
 import { getTld } from "./util.js";
+import ResolverRegistry from "@lumeweb/resolver";
 
 export interface ResolverModule {
-  constructor(resolver: any): void;
+  constructor(resolver: ResolverRegistry): void;
 
   resolve(
     domain: string,
@@ -12,9 +13,9 @@ export interface ResolverModule {
 }
 
 export abstract class AbstractResolverModule {
-  protected resolver: any;
+  protected resolver: ResolverRegistry;
 
-  constructor(resolver: any) {
+  constructor(resolver: ResolverRegistry) {
     this.resolver = resolver;
   }
 

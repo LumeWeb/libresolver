@@ -2,5 +2,8 @@
     "name": "@lumeweb/resolver-common",
     "version": "0.1.0",
     "description": "Common code and interfaces for the DNS resolver modules",
-    "main": "dist/index.js"
+    "main": "dist/index.js",
+    "dependencies": {
+        "@lumeweb/resolver": "https://github.com/LumeWeb/resolver.git#modular"
+    }
 }
