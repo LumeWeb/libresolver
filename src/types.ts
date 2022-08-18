@@ -1,5 +1,5 @@
 export interface ResolverOptions {
-  type: any;
+  type: string;
   customType?: string;
   options?: any;
 }
@@ -14,7 +14,6 @@ export interface DNSRecord {
   customType?: string;
   value: string;
 }
-
 const DNS_RECORD_TYPE = {
   DEFAULT: "DEFAULT",
   A: "A",
