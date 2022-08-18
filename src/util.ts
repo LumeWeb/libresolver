@@ -51,3 +51,6 @@ export function resolveSuccess(records: DNSRecord[]): DNSResult {
     records,
   };
 }
+export function normalizeDomain(domain: string): string {
+  return domain.replace(/^\.+|\.+$/g, "").replace(/^\/+|\/+$/g, "");
+}
