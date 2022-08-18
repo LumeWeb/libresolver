@@ -1,8 +1,7 @@
 export interface ResolverOptions {
-  type: any;
+  type: string;
   customType?: string;
-  records: any[];
-  options: any;
+  options?: any;
 }
 export interface DNSResult {
   records: any[];
@@ -14,6 +13,7 @@ export interface DNSRecord {
   value: string;
 }
 declare const DNS_RECORD_TYPE: {
+  DEFAULT: string;
   A: string;
   CNAME: string;
   NS: string;
