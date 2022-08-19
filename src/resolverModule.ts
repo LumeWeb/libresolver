@@ -1,6 +1,22 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
 import { getTld } from "./util.js";
-import { ResolverRegistry } from "@lumeweb/resolver";
+import {RpcNetwork} from "@lumeweb/dht-rpc-client";
+
+declare class ResolverRegistry {
+    private _resolvers;
+    private _rpcNetwork;
+    constructor(network?: RpcNetwork);
+    get resolvers(): Set<ResolverModule>;
+    get rpcNetwork(): RpcNetwork;
+    resolve(
+        domain: string,
+        options?: ResolverOptions,
+        bypassCache?: boolean
+    ): Promise<DNSResult>;
+    register(resolver: ResolverModule): void;
+    clear(): void;
+}
+
 
 export interface ResolverModule {
   constructor(resolver: ResolverRegistry);
