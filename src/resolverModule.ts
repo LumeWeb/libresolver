@@ -10,6 +10,8 @@ export interface ResolverModule {
     options: ResolverOptions,
     bypassCache: boolean
   ): Promise<DNSResult>;
+
+  getSupportedTlds(): string[];
 }
 
 export abstract class AbstractResolverModule {
