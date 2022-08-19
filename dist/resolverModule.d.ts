@@ -1,7 +1,7 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
 import { ResolverRegistry } from "@lumeweb/resolver";
 export interface ResolverModule {
-  constructor(resolver: ResolverRegistry): void;
+  new (resolver: ResolverRegistry): any;
   resolve(
     domain: string,
     options: ResolverOptions,
@@ -9,7 +9,7 @@ export interface ResolverModule {
   ): Promise<DNSResult>;
   getSupportedTlds(): string[];
 }
-export declare abstract class AbstractResolverModule {
+export declare abstract class AbstractResolverModule implements ResolverModule {
   protected resolver: ResolverRegistry;
   constructor(resolver: ResolverRegistry);
   abstract resolve(
