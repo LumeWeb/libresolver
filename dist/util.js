@@ -41,3 +41,8 @@ export function resolveSuccess(records) {
 export function normalizeDomain(domain) {
     return domain.replace(/^\.+|\.+$/g, "").replace(/^\/+|\/+$/g, "");
 }
+export function isPromise(obj) {
+    return (!!obj &&
+        (typeof obj === "object" || typeof obj === "function") &&
+        typeof obj.then === "function");
+}
