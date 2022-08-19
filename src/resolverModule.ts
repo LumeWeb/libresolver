@@ -14,7 +14,7 @@ export interface ResolverModule {
   getSupportedTlds(): string[];
 }
 
-export abstract class AbstractResolverModule {
+export abstract class AbstractResolverModule implements ResolverModule {
   protected resolver: ResolverRegistry;
 
   constructor(resolver: ResolverRegistry) {
