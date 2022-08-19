@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { DNSResult, ResolverOptions } from "./types.js";
 import { getTld } from "./util.js";
 import { ResolverRegistry } from "@lumeweb/resolver";
@@ -16,7 +15,7 @@ export interface ResolverModule {
 }
 
 // ts-ignore
-export abstract class AbstractResolverModule implements ResolverModule {
+export abstract class AbstractResolverModule {
   protected resolver: ResolverRegistry;
 
   constructor(resolver: ResolverRegistry) {
