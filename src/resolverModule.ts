@@ -23,7 +23,7 @@ export abstract class AbstractResolverModule implements ResolverModule {
     this.resolver = resolver;
   }
 
-  abstract resolve(
+  abstract async resolve(
     domain: string,
     options: ResolverOptions,
     bypassCache: boolean
