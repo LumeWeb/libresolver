@@ -4,7 +4,6 @@ export class AbstractResolverModule {
     resolver;
     constructor(resolver) {
         this.resolver = resolver;
-        return this;
     }
     getSupportedTlds() {
         return [];
