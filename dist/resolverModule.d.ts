@@ -7,6 +7,7 @@ export interface ResolverModule {
     options: ResolverOptions,
     bypassCache: boolean
   ): Promise<DNSResult>;
+  getSupportedTlds(): string[];
 }
 export declare abstract class AbstractResolverModule {
   protected resolver: ResolverRegistry;
