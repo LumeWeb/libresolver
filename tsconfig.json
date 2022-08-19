@@ -15,7 +15,8 @@
         "declarationMap": true,
         "declarationDir": "dist",
         "emitDeclarationOnly": false,
-        "allowJs": true
+        "allowJs": true,
+        "noImplicitAny": false
     },
     "include": [
         "src"

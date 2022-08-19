@@ -1,9 +1,10 @@
+// @ts-nocheck
 import type { DNSResult, ResolverOptions } from "./types.js";
 import { getTld } from "./util.js";
 import { ResolverRegistry } from "@lumeweb/resolver";
 
 export interface ResolverModule {
-  constructor(resolver: ResolverRegistry): void;
+  new (resolver: ResolverRegistry): any;
 
   resolve(
     domain: string,
@@ -14,11 +15,13 @@ export interface ResolverModule {
   getSupportedTlds(): string[];
 }
 
+// ts-ignore
 export abstract class AbstractResolverModule implements ResolverModule {
   protected resolver: ResolverRegistry;
 
   constructor(resolver: ResolverRegistry) {
     this.resolver = resolver;
+    return this;
   }
 
   abstract resolve(
