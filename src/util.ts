@@ -54,3 +54,10 @@ export function resolveSuccess(records: DNSRecord[]): DNSResult {
 export function normalizeDomain(domain: string): string {
   return domain.replace(/^\.+|\.+$/g, "").replace(/^\/+|\/+$/g, "");
 }
+export function isPromise(obj: Promise<any>) {
+  return (
+    !!obj &&
+    (typeof obj === "object" || typeof obj === "function") &&
+    typeof obj.then === "function"
+  );
+}
