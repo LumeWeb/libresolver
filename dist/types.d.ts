@@ -13,7 +13,6 @@ export interface DNSRecord {
   value: string;
 }
 declare const DNS_RECORD_TYPE: {
-  DEFAULT: string;
   A: string;
   CNAME: string;
   NS: string;

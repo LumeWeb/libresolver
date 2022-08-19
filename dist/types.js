@@ -1,5 +1,4 @@
 const DNS_RECORD_TYPE = {
-    DEFAULT: "DEFAULT",
     A: "A",
     CNAME: "CNAME",
     NS: "NS",
