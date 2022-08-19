@@ -22,7 +22,7 @@ export abstract class AbstractResolverModule {
     this.resolver = resolver;
   }
 
-  abstract async resolve(
+  abstract resolve(
     domain: string,
     options: ResolverOptions,
     bypassCache: boolean

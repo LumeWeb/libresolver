@@ -9,7 +9,7 @@ export interface ResolverModule {
   ): Promise<DNSResult>;
   getSupportedTlds(): string[];
 }
-export declare abstract class AbstractResolverModule implements ResolverModule {
+export declare abstract class AbstractResolverModule {
   protected resolver: ResolverRegistry;
   constructor(resolver: ResolverRegistry);
   abstract resolve(
