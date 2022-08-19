@@ -4,7 +4,7 @@ import { getTld } from "./util.js";
 import { ResolverRegistry } from "@lumeweb/resolver";
 
 export interface ResolverModule {
-  new (resolver: ResolverRegistry): any;
+  constructor(resolver: ResolverRegistry);
 
   resolve(
     domain: string,
@@ -21,7 +21,6 @@ export abstract class AbstractResolverModule implements ResolverModule {
 
   constructor(resolver: ResolverRegistry) {
     this.resolver = resolver;
-    return this;
   }
 
   abstract resolve(
