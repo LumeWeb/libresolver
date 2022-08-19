@@ -24,7 +24,7 @@ export abstract class AbstractResolverModule implements ResolverModule {
   }
 
   abstract resolve(
-    input: string,
+    domain: string,
     options: ResolverOptions,
     bypassCache: boolean
   ): Promise<DNSResult>;
