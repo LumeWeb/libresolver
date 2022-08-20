@@ -14,8 +14,10 @@ declare class ResolverRegistry {
   register(resolver: ResolverModule): void;
   clear(): void;
 }
-export interface ResolverModule {
-  constructor(resolver: ResolverRegistry): any;
+export interface ResolverModuleConstructor {
+  new (resolver: ResolverRegistry): any;
+}
+export interface ResolverModule extends ResolverModuleConstructor {
   resolve(
     domain: string,
     options: ResolverOptions,
