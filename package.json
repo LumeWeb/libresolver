@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "description": "Common code and interfaces for the DNS resolver modules",
     "main": "dist/index.js",
+    "type": "module",
     "devDependencies": {
         "@lumeweb/dht-rpc-client": "https://github.com/LumeWeb/dht-rpc-client.git"
     }
