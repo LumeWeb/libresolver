@@ -61,3 +61,9 @@ export function isPromise(obj: Promise<any>) {
     typeof obj.then === "function"
   );
 }
+
+export function ensureUniqueRecords(records: DNSRecord[]) {
+  return [
+    ...new Set(records.map((item: DNSRecord) => JSON.stringify(item))),
+  ].map((item) => JSON.parse(item));
+}
