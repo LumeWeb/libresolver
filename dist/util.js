@@ -46,3 +46,8 @@ export function isPromise(obj) {
         (typeof obj === "object" || typeof obj === "function") &&
         typeof obj.then === "function");
 }
+export function ensureUniqueRecords(records) {
+    return [
+        ...new Set(records.map((item) => JSON.stringify(item))),
+    ].map((item) => JSON.parse(item));
+}

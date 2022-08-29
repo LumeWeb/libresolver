@@ -8,4 +8,5 @@ export declare function resolverError(e: Error | string): DNSResult;
 export declare function resolveSuccess(records: DNSRecord[]): DNSResult;
 export declare function normalizeDomain(domain: string): string;
 export declare function isPromise(obj: Promise<any>): boolean;
+export declare function ensureUniqueRecords(records: DNSRecord[]): any[];
 //# sourceMappingURL=util.d.ts.map
