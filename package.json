@@ -5,6 +5,6 @@
     "main": "dist/index.js",
     "type": "module",
     "devDependencies": {
-        "@lumeweb/dht-rpc-client": "https://github.com/LumeWeb/dht-rpc-client.git"
+        "@lumeweb/rpc-client": "git+https://git.lumeweb.com/LumeWeb/rpc-client.git"
     }
 }
