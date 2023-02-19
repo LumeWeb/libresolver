@@ -1,5 +1,5 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
-import { getTld } from "./util.js";
+import { getTld, isPromise } from "./util.js";
 
 declare class ResolverRegistry {
   get resolvers(): Set<ResolverModule> | Promise<Set<ResolverModule>>;
@@ -23,7 +23,7 @@ export interface ResolverModule extends ResolverModuleConstructor {
     bypassCache: boolean
   ): Promise<DNSResult>;
 
-  getSupportedTlds(): string[];
+  getSupportedTlds(): string[] | Promise<string[]>;
 }
 
 // ts-ignore
@@ -40,11 +40,18 @@ export abstract class AbstractResolverModule {
     bypassCache: boolean
   ): Promise<DNSResult>;
 
-  getSupportedTlds(): string[] {
+  getSupportedTlds(): string[] | Promise<string[]> {
     return [];
   }
 
-  isTldSupported(domain: string): boolean {
-    return this.getSupportedTlds().includes(getTld(domain));
+  isTldSupported(domain: string): boolean | Promise<boolean> {
+    let supported = this.getSupportedTlds();
+    if (isPromise(supported as Promise<string[]>)) {
+      return (supported as Promise<string[]>).then((supported: string[]) => {
+        return supported.includes(getTld(domain));
+      });
+    }
+
+    return (supported as string[]).includes(getTld(domain));
   }
 }
