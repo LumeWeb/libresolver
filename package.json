@@ -5,6 +5,7 @@
     "main": "dist/index.js",
     "type": "module",
     "devDependencies": {
-        "@lumeweb/rpc-client": "git+https://git.lumeweb.com/LumeWeb/rpc-client.git"
+        "@lumeweb/rpc-client": "git+https://git.lumeweb.com/LumeWeb/rpc-client.git",
+        "typescript": "^4.9.5"
     }
 }
