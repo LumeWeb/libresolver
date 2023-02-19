@@ -1,6 +1,5 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
 declare class ResolverRegistry {
-  private _resolvers;
   get resolvers(): Set<ResolverModule>;
   resolve(
     domain: string,
