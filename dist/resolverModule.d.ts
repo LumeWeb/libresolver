@@ -29,7 +29,8 @@ export declare abstract class AbstractResolverModule {
     bypassCache: boolean
   ): Promise<DNSResult>;
   getSupportedTlds(): string[] | Promise<string[]>;
-  isTldSupported(domain: string): boolean | Promise<boolean>;
+  isTldSupported(domain: string): Promise<boolean>;
+  isTldSupported(domain: string): boolean;
 }
 export {};
 //# sourceMappingURL=resolverModule.d.ts.map
