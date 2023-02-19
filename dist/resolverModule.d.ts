@@ -1,11 +1,7 @@
 import type { DNSResult, ResolverOptions } from "./types.js";
-import type { RpcNetwork } from "@lumeweb/rpc-client";
 declare class ResolverRegistry {
   private _resolvers;
-  private _rpcNetwork;
-  constructor(network?: RpcNetwork);
   get resolvers(): Set<ResolverModule>;
-  get rpcNetwork(): RpcNetwork;
   resolve(
     domain: string,
     options?: ResolverOptions,
