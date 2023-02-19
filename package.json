@@ -7,7 +7,6 @@
     "devDependencies": {
         "@lumeweb/cfg": "git+https://git.lumeweb.com/LumeWeb/cfg.git",
         "@lumeweb/relay-types": "git+https://git.lumeweb.com/LumeWeb/relay-types.git",
-        "@lumeweb/rpc-client": "git+https://git.lumeweb.com/LumeWeb/rpc-client.git",
         "@types/node": "^18.14.0",
         "node-cache": "^5.1.2",
         "typescript": "^4.9.5"
