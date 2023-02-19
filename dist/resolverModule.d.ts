@@ -18,7 +18,7 @@ export interface ResolverModule extends ResolverModuleConstructor {
     options: ResolverOptions,
     bypassCache: boolean
   ): Promise<DNSResult>;
-  getSupportedTlds(): string[];
+  getSupportedTlds(): string[] | Promise<string[]>;
 }
 export declare abstract class AbstractResolverModule {
   protected resolver: ResolverRegistry;
@@ -28,8 +28,8 @@ export declare abstract class AbstractResolverModule {
     options: ResolverOptions,
     bypassCache: boolean
   ): Promise<DNSResult>;
-  getSupportedTlds(): string[];
-  isTldSupported(domain: string): boolean;
+  getSupportedTlds(): string[] | Promise<string[]>;
+  isTldSupported(domain: string): boolean | Promise<boolean>;
 }
 export {};
 //# sourceMappingURL=resolverModule.d.ts.map

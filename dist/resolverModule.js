@@ -1,4 +1,4 @@
-import { getTld } from "./util.js";
+import { getTld, isPromise } from "./util.js";
 // ts-ignore
 export class AbstractResolverModule {
     resolver;
@@ -9,6 +9,12 @@ export class AbstractResolverModule {
         return [];
     }
     isTldSupported(domain) {
-        return this.getSupportedTlds().includes(getTld(domain));
+        let supported = this.getSupportedTlds();
+        if (isPromise(supported)) {
+            return supported.then((supported) => {
+                return supported.includes(getTld(domain));
+            });
+        }
+        return supported.includes(getTld(domain));
     }
 }
