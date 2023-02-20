@@ -51,8 +51,8 @@ export abstract class AbstractResolverModule {
   isTldSupported(domain: string): Promise<boolean>;
   isTldSupported(domain: string): boolean;
   isTldSupported(domain: string): any {
-    let supported = this.getSupportedTlds();
-    if (isPromise(supported as Promise<string[]>)) {
+    let supported = this.getSupportedTlds() as any;
+    if (isPromise(supported)) {
       return (supported as Promise<string[]>).then((supported: string[]) => {
         return supported.includes(getTld(domain));
       });
