@@ -23,7 +23,9 @@ export interface ResolverModule extends ResolverModuleConstructor {
     bypassCache: boolean
   ): Promise<DNSResult>;
 
-  getSupportedTlds(): string[] | Promise<string[]>;
+  getSupportedTlds(): string[];
+  getSupportedTlds(): Promise<string[]>;
+  getSupportedTlds(): any;
 }
 
 // ts-ignore
@@ -40,7 +42,9 @@ export abstract class AbstractResolverModule {
     bypassCache: boolean
   ): Promise<DNSResult>;
 
-  getSupportedTlds(): string[] | Promise<string[]> {
+  getSupportedTlds(): string[];
+  getSupportedTlds(): Promise<string[]>;
+  getSupportedTlds(): any {
     return [];
   }
 
