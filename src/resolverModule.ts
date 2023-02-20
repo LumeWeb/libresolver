@@ -13,6 +13,8 @@ declare class ResolverRegistry {
 }
 
 export interface ResolverModule {
+  get resolver(): ResolverRegistry;
+  set resolver(value: ResolverRegistry);
   resolve(
     domain: string,
     options: ResolverOptions,
