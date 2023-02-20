@@ -9,10 +9,7 @@ declare class ResolverRegistry {
   register(resolver: ResolverModule): void;
   clear(): void;
 }
-export interface ResolverModuleConstructor {
-  new (resolver: ResolverRegistry): any;
-}
-export interface ResolverModule extends ResolverModuleConstructor {
+export interface ResolverModule {
   resolve(
     domain: string,
     options: ResolverOptions,
@@ -23,8 +20,10 @@ export interface ResolverModule extends ResolverModuleConstructor {
   getSupportedTlds(): any;
 }
 export declare abstract class AbstractResolverModule {
-  protected resolver: ResolverRegistry;
-  constructor(resolver: ResolverRegistry);
+  constructor(resolver?: ResolverRegistry);
+  private _resolver?;
+  get resolver(): ResolverRegistry;
+  set resolver(value: ResolverRegistry);
   abstract resolve(
     domain: string,
     options: ResolverOptions,

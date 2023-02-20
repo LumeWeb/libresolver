@@ -1,9 +1,15 @@
 import { getTld, isPromise } from "./util.js";
 // ts-ignore
 export class AbstractResolverModule {
-    resolver;
     constructor(resolver) {
-        this.resolver = resolver;
+        this._resolver = resolver;
+    }
+    _resolver;
+    get resolver() {
+        return this._resolver;
+    }
+    set resolver(value) {
+        this._resolver = value;
     }
     getSupportedTlds() {
         return [];
