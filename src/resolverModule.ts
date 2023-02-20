@@ -12,11 +12,7 @@ declare class ResolverRegistry {
   clear(): void;
 }
 
-export interface ResolverModuleConstructor {
-  new (resolver: ResolverRegistry);
-}
-
-export interface ResolverModule extends ResolverModuleConstructor {
+export interface ResolverModule {
   resolve(
     domain: string,
     options: ResolverOptions,
@@ -30,10 +26,18 @@ export interface ResolverModule extends ResolverModuleConstructor {
 
 // ts-ignore
 export abstract class AbstractResolverModule {
-  protected resolver: ResolverRegistry;
+  constructor(resolver?: ResolverRegistry) {
+    this._resolver = resolver;
+  }
 
-  constructor(resolver: ResolverRegistry) {
-    this.resolver = resolver;
+  private _resolver?: ResolverRegistry;
+
+  get resolver(): ResolverRegistry {
+    return this._resolver as ResolverRegistry;
+  }
+
+  set resolver(value: ResolverRegistry) {
+    this._resolver = value;
   }
 
   abstract resolve(
