@@ -1,12 +1,12 @@
 {
     "name": "@lumeweb/libresolver",
-    "version": "0.1.0",
+    "version": "0.0.2-develop.1",
     "lockfileVersion": 3,
     "requires": true,
     "packages": {
         "": {
             "name": "@lumeweb/libresolver",
-            "version": "0.1.0",
+            "version": "0.0.2-develop.1",
             "devDependencies": {
                 "@lumeweb/node-library-preset": "^0.2.7",
                 "presetter": "*"
