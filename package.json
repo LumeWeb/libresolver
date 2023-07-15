@@ -1,6 +1,6 @@
 {
     "name": "@lumeweb/libresolver",
-    "version": "0.0.2-develop.1",
+    "version": "0.1.0-develop.1",
     "description": "Common code and interfaces for the DNS resolver modules",
     "main": "lib/index.js",
     "repository": {
