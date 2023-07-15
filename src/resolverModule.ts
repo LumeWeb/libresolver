@@ -3,26 +3,33 @@ import { getTld, isPromise } from "./util.js";
 
 declare class ResolverRegistry {
   get resolvers(): Set<ResolverModule> | Promise<Set<ResolverModule>>;
+
   resolve(
     domain: string,
     options?: ResolverOptions,
-    bypassCache?: boolean
+    bypassCache?: boolean,
   ): Promise<DNSResult>;
+
   register(resolver: ResolverModule): void;
+
   clear(): void;
 }
 
 export interface ResolverModule {
   get resolver(): ResolverRegistry;
+
   set resolver(value: ResolverRegistry);
+
   resolve(
     domain: string,
     options: ResolverOptions,
-    bypassCache: boolean
+    bypassCache: boolean,
   ): Promise<DNSResult>;
 
   getSupportedTlds(): string[];
+
   getSupportedTlds(): Promise<string[]>;
+
   getSupportedTlds(): any;
 }
 
@@ -45,7 +52,7 @@ export abstract class AbstractResolverModule {
   abstract resolve(
     domain: string,
     options: ResolverOptions,
-    bypassCache: boolean
+    bypassCache: boolean,
   ): Promise<DNSResult>;
 
   getSupportedTlds(): string[];
@@ -66,4 +73,6 @@ export abstract class AbstractResolverModule {
 
     return (supported as string[]).includes(getTld(domain));
   }
+
+  abstract ready(): Promise<void>;
 }
